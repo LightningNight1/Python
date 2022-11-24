@@ -3,19 +3,19 @@
 
 x = float(input('Введите координату точки X: '))
 y = float(input('Введите координату точки Y: '))
-if (x == 0 or y == 0):
-    if (x != 0 and y == 0):
+if x == 0 or y == 0:
+    if x != 0 and y == 0:
         print('Точка лежит на оси Х')
-    elif (x == 0 and y != 0):
+    elif x == 0 and y != 0:
         print('Точка лежит на оси Y')
     else:
         print('Точка лежит в начале координат')
 else:
-    if (x > 0 and y > 0):
+    if x > 0 and y > 0:
         print('Точка находится в 1-ой четверти')
-    elif (x < 0 and y > 0):
+    elif x < 0 and y > 0:
         print('Точка находится в 2-ой четверти')
-    elif (x < 0 and y < 0):
+    elif x < 0 and y < 0:
         print('Точка находится в 3-ой четверти')
     else:
         print('Точка находится в 4-ой четверти')

@@ -4,5 +4,5 @@
 num = input('Enter the number: ')
 num2 = int(num + num)
 num3 = int(num+num+num)
-sum = int(num) + num2 + num3
-print(f'{num} + {num2} + {num3} = {sum}')
+result = int(num) + num2 + num3
+print(f'{num} + {num2} + {num3} = {result}')
