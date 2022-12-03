@@ -10,4 +10,4 @@ def my_func(arg1, arg2):
 
 
 print(my_func(int(input('Enter the integer arg1: ')),
-      int(input('Enter the integer arg2: '))))
+              int(input('Enter the integer arg2: '))))
