@@ -22,10 +22,9 @@ def my_func1(x, y):
     return x ** y
 
 
-print(timeit("my_func(56156.98171, -7)",
-      "from __main__ import my_func", number=1000000))
-print(timeit("my_func1(56156.98171, -7)",
-      "from __main__ import my_func1", number=1000000))
+print(timeit("my_func(56156.98171, -7)", "from __main__ import my_func"))
+print(timeit("my_func1(56156.98171, -7)", "from __main__ import my_func1"))
+
 
 '''
 Первый вариант задачи сделал через цикл while, по времени получилось 1.4607686000017566
