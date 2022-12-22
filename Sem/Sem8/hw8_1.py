@@ -4,31 +4,38 @@
 # объектов класса Matrix (двух матриц). Результатом сложения должна быть новая матрица.
 
 class Matrix:
-    def __init__(self, list_1, list_2):
-        self.list_1 = list_1
-        self.list_2 = list_2
+    matrix_count = 0
 
-    def __add__(self):
-        matrix = [[0, 0, 0],
-                  [0, 0, 0],
-                  [0, 0, 0]]
-
-        for i in range(len(self.list_1)):
-
-            for j in range(len(self.list_2[i])):
-                matrix[i][j] = self.list_1[i][j] + self.list_2[i][j]
-
-        return str('\n'.join(['\t'.join([str(j) for j in i]) for i in matrix]))
+    def __init__(self, param):
+        self.param = param
+        Matrix.matrix_count += 1
 
     def __str__(self):
-        return str('\n'.join(['\t'.join([str(j) for j in i]) for i in matr]))
+        print(f'Matrix {Matrix.matrix_count}')
+        for el in self.param:
+            print(el)
+        return ''
+
+    def __add__(self, other):
+        result = []
+        for i in range(len(self.param)):
+            matr = []
+            for j in range(len(self.param[i])):
+                matr.append(self.param[i][j] + other.param[i][j])
+            result.append(matr)
+        return Matrix(result)
 
 
-my_matrix = Matrix([[1, 2, 3],
-                    [4, 5, 6],
-                    [7, 8, 9]],
-                   [[1, 2, 3],
-                    [4, 5, 6],
-                    [7, 8, 9]])
+list1 = [i for i in range(1, 4)]
+list2 = [i for i in range(4, 7)]
+list3 = [i for i in range(7, 10)]
 
-print(my_matrix.__add__())
+my_matrix = [list1, list2, list3]
+
+matrix1 = Matrix(my_matrix)
+print(matrix1)
+matrix2 = Matrix(my_matrix)
+print(matrix2)
+print('The sum of the matrices is: ')
+matrix3 = matrix1 + matrix2
+print(matrix3)

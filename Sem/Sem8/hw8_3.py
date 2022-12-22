@@ -2,18 +2,24 @@
 # вводимых пользователем. При вводе пользователем нуля в качестве делителя программа должна корректно обработать эту ситуацию
 # и не завершиться с ошибкой.
 
-class DivisionByZero:
-    def __init__(self, dividend, divisor):
-        self.divisor = dividend
-        self.denominator = divisor
-
-    @staticmethod
-    def divide_by_zero(dividend, divisor):
-        try:
-            return (dividend / divisor)
-        except:
-            return '0 can never be a divisor of any number'
+class DivisionByZero(Exception):
+    def __init__(self, txt):
+        self.txt = txt
 
 
-print(DivisionByZero.divide_by_zero(int(input('Enter dividend: ')),
-                                    int(input('Enter divisor: '))))
+dividend = input('Enter dividend: ')
+divisor = input('Enter divisor: ')
+
+try:
+    dividend = int(dividend)
+    divisor = int(divisor)
+
+    if divisor == 0:
+        raise DivisionByZero('0 can never be a divisor of any number')
+    result = dividend / divisor
+except ValueError:
+    print('Invalid value')
+except DivisionByZero as err:
+    print(err)
+else:
+    print(f'{divisor} / {dividend} = {result}')
